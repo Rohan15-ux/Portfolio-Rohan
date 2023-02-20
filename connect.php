@@ -10,7 +10,7 @@
 		die("Connection Failed : ". $conn->connect_error);
 	} else {
 		$stmt = $conn->prepare("insert into req(name, email, message) values(?,?,?)");
-		$stmt->bind_param("sssssi", $name,$email,$message);
+		$stmt->bind_param("sss", $name,$email,$message);
 		$execval = $stmt->execute();
 		echo $execval;
 		echo "Registration successfully...";
